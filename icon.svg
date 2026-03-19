@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Tower base -->
+  <rect x="44" y="70" width="40" height="50" fill="#888"/>
+  <!-- Tower top (battlements) -->
+  <rect x="36" y="50" width="56" height="28" fill="#aaa"/>
+  <rect x="36" y="40" width="12" height="18" fill="#aaa"/>
+  <rect x="58" y="40" width="12" height="18" fill="#aaa"/>
+  <rect x="80" y="40" width="12" height="18" fill="#aaa"/>
+  <!-- Cannon barrel -->
+  <rect x="88" y="60" width="30" height="10" fill="#555" rx="3"/>
+  <!-- Gold coin indicator -->
+  <circle cx="20" cy="20" r="14" fill="#f0b429"/>
+  <text x="20" y="25" text-anchor="middle" font-size="16" fill="#7a5c00" font-weight="bold">$</text>
+</svg>

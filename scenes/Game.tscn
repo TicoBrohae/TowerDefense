@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/Grid.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/WaveManager.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/RangeIndicator.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="5"]
+
+; Root node — runs Game.gd which wires everything together
+[node name="Game" type="Node2D"]
+script = ExtResource("1")
+
+; Grid: manages the 17×13 cell game board and pathfinding
+; Positioned at (0, 50) — below the 50px top bar
+[node name="Grid" type="Node2D" parent="."]
+position = Vector2(0, 50)
+script = ExtResource("2")
+
+; Enemies: container node — WaveManager adds enemy instances here
+[node name="Enemies" type="Node2D" parent="."]
+
+; Towers: container node — Game.gd adds tower instances here
+[node name="Towers" type="Node2D" parent="."]
+
+; Projectiles: container node — towers add projectile instances here
+[node name="Projectiles" type="Node2D" parent="."]
+
+; RangeIndicator: drawn on top of everything, shows selected tower range
+[node name="RangeIndicator" type="Node2D" parent="."]
+script = ExtResource("4")
+
+; WaveManager: handles enemy wave logic (no visual component)
+[node name="WaveManager" type="Node" parent="."]
+script = ExtResource("3")
+
+; HUD: CanvasLayer so UI always renders on top of the game world
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
+script = ExtResource("5")

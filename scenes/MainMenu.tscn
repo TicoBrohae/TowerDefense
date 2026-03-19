@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id="1"]
+
+; CanvasLayer resolves child Control anchors against the live viewport rect
+; (content_scale_size virtual canvas), so the layout is always correct.
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1")
