@@ -277,7 +277,7 @@ func _build_options_panel() -> void:
 	# ---- UI Scale ----
 	vbox.add_child(_section_label("Interface", 15, Color(0.75, 1.0, 0.75)))
 
-	_scale_slider = _slider_row(vbox, "UI Scale", 0.5, 2.0, SettingsManager.ui_scale,
+	_scale_slider = _slider_row(vbox, "UI Scale", 0.5, SettingsManager.MAX_UI_SCALE, SettingsManager.ui_scale,
 		func(v: float):
 			SettingsManager.ui_scale = v
 			SettingsManager.apply_ui_scale()
@@ -285,7 +285,7 @@ func _build_options_panel() -> void:
 	_scale_slider.step = 0.25   # Snap to quarter-unit increments
 
 	var hint := Label.new()
-	hint.text = "0.5 = smaller UI      1.0 = default      2.0 = larger UI"
+	hint.text = "0.5 = smaller UI      1.0 = default (max)"
 	hint.add_theme_font_size_override("font_size", 11)
 	hint.add_theme_color_override("font_color", Color(0.50, 0.50, 0.50))
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

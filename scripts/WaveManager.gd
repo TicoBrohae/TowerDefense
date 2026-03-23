@@ -46,11 +46,23 @@ const WAVE_DATA: Array = [
 	[{"type": "fast",    "count": 25, "interval": 0.35},
 	 {"type": "normal",  "count": 10, "interval": 0.60}],
 
-	# Wave 8 — Final wave
+	# Wave 8 — Heavy assault
 	[{"type": "normal",  "count": 20, "interval": 0.55},
 	 {"type": "fast",    "count": 15, "interval": 0.35},
 	 {"type": "armored", "count": 12, "interval": 0.80},
 	 {"type": "boss",    "count":  3, "interval": 6.00}],
+
+	# Wave 9 — Elite surge
+	[{"type": "normal",  "count": 22, "interval": 0.50},
+	 {"type": "fast",    "count": 18, "interval": 0.30},
+	 {"type": "armored", "count": 15, "interval": 0.70},
+	 {"type": "boss",    "count":  4, "interval": 5.00}],
+
+	# Wave 10 — Final wave
+	[{"type": "normal",  "count": 25, "interval": 0.45},
+	 {"type": "fast",    "count": 20, "interval": 0.25},
+	 {"type": "armored", "count": 18, "interval": 0.65},
+	 {"type": "boss",    "count":  5, "interval": 4.00}],
 ]
 
 # ---------------------------------------------------------------------------

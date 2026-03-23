@@ -9,7 +9,7 @@ func _ready() -> void:
 	current_health= max_health
 	move_speed    = 105.0   # Much faster than normal
 	armor         = 0.0
-	gold_reward   = 12
+	gold_reward   = 20
 	super._ready()
 
 func _draw() -> void:

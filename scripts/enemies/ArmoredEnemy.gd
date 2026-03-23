@@ -10,7 +10,7 @@ func _ready() -> void:
 	current_health= max_health
 	move_speed    = 65.0     # Slightly slower
 	armor         = 0.40     # 40% damage reduction
-	gold_reward   = 20
+	gold_reward   = 40
 	super._ready()
 
 ## Armored enemies resist slow effects — their heavy plating absorbs 50% of the slow factor.

@@ -116,6 +116,11 @@ func apply_display() -> void:
 			)
 		)
 
+## Maximum ui_scale that still fits the full 20×20 grid (900 px tall) plus the
+## 50 px top bar within the 960 px base canvas height.
+## Y-axis is the tighter constraint: 960 / (50 + 20×45) = 960 / 950 ≈ 1.010.
+const MAX_UI_SCALE: float = 960.0 / 950.0
+
 func apply_ui_scale() -> void:
 	## Shrinks or grows the virtual canvas so UI elements appear larger or smaller.
 	##
@@ -123,7 +128,11 @@ func apply_ui_scale() -> void:
 	##   ui_scale = 1.0  →  canvas 1280×960  (default)
 	##   ui_scale = 2.0  →  canvas  640×480  → each pixel covers 2× screen space → bigger UI
 	##   ui_scale = 0.5  →  canvas 2560×1920 → elements appear at half size → smaller UI
-	var size := Vector2i(int(1280.0 / ui_scale), int(960.0 / ui_scale))
+	##
+	## ui_scale is clamped to MAX_UI_SCALE so the virtual canvas never shrinks
+	## below the minimum size needed to display the full game grid.
+	var clamped := minf(ui_scale, MAX_UI_SCALE)
+	var size := Vector2i(int(1280.0 / clamped), int(960.0 / clamped))
 	get_tree().root.content_scale_size = size
 
 # ---------------------------------------------------------------------------
